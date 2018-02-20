@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context="com.edwinacubillos.sesion2g1.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:text="@string/titulo"
         android:textSize="30sp"
         android:textColor="@color/black"
@@ -18,7 +20,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,65 +36,91 @@
             android:id="@+id/eNombre"/>
 
     </LinearLayout>
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="@string/correo"
-        android:id="@+id/eCorreo"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/correo"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/eCorreo"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:onClick="guardar"
         android:text="@string/guardar"
         android:id="@+id/bGuardar"/>
+    </LinearLayout>
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
         <RadioButton
             android:id="@+id/rMasculino"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/masculino"
+            android:gravity="center"
             android:onClick="onRadioButtonClicked"/>
         <RadioButton android:id="@+id/rFemenino"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/femenino"
+            android:gravity="center"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:text="@string/pasatiempos"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cine"
             android:id="@+id/cCine"
-            android:onClick="onCheckBoxClicked"/>
-        <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="@string/nadar"
+            android:onClick="onCheckBoxClicked"
+            android:text="@string/cine" />
+
+        <CheckBox
             android:id="@+id/cNadar"
-            android:onClick="onCheckBoxClicked"/>
-        <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/gym"
+            android:onClick="onCheckBoxClicked"
+            android:text="@string/nadar" />
+
+        <CheckBox
             android:id="@+id/cGym"
-            android:onClick="onCheckBoxClicked"/>
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckBoxClicked"
+            android:text="@string/gym" />
     </LinearLayout>
 
 </LinearLayout>

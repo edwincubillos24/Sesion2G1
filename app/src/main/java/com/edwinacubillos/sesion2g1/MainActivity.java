@@ -2,15 +2,17 @@ package com.edwinacubillos.sesion2g1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText eCorreo, eNombre;
- //   Button bGuardar;
+    Button bGuardar;
     CheckBox cCine, cNadar, cGym;
     String nombre, correo, data="";
 
@@ -25,15 +27,17 @@ public class MainActivity extends AppCompatActivity {
         cNadar = findViewById(R.id.cNadar);
         cGym = findViewById(R.id.cGym);
 
-   /*     bGuardar = findViewById(R.id.bGuardar);
+        bGuardar = findViewById(R.id.bGuardar);
 
         bGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nombre = eNombre.getText().toString();
                 eCorreo.setText(nombre);
+                Toast.makeText(getApplication(), "Presiono Masculino",
+                        Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
 
     public void guardar(View view) {
@@ -50,7 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         int id = view.getId();
 
-        if (id == R.id.rMasculino){
+        if (id == R.id.cCine){
+
+            Toast.makeText(this, "Presiono Masculino",
+                    Toast.LENGTH_SHORT).show();
+
+            Log.d("radioButton","Masculino");
+
             data = data  + " sexo: Masculino";
         } else {
             data = data  + " sexo: Femenino";
